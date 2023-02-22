@@ -8,10 +8,13 @@
             <link rel="stylesheet" href="Style.css">
 
 <body>
+
+    <script src = "app.js"> </script>
     <header>
     
         <div class = "container">  
         <nav>
+            <img src = "#" class = "logo">
             <ul>  
                 <li>  
                 <a href="Home.html"> Home </a>  
@@ -32,16 +35,71 @@
         </nav>
     </div>
     </header> 
-     
-    <h1>
-More about Dhruv: 
-    </h1>
-        <p> 
 
-            My name is Dhruv Manish Pranlal, 4th year Electrical Engineering student at the University of Alberta. I am from Zanzibar, Tanzania.
-            I am a firm beleiver in hardwork, and that has gotten me to where I am today. 
 
-        </p>
+<div id="about">
+
+    <div class="container">
+        <div class = "row">
+            <div class = "about-col-1">
+                <img src = "#">
+            </div>
+            <div class = "about-col-2">
+                <h1 class = "sub-title"> More about Dhruv </h1>
+                <p> 
+
+                    My name is Dhruv Manish Pranlal, 4th year Electrical Engineering student at the University of Alberta. I am from Zanzibar, Tanzania (Map to see where I am from).
+                    I am a firm beleiver in hardwork, and that has gotten me to where I am today. 
+        
+                </p>
+
+                <div class = "tab-titles">
+                    <p class = "tab-links active-link" onclick="opentab('Skills')"> Skills</p>
+                    <p class = "tab-links"onclick="opentab('Experience')"> Experience</p>
+                    <p class = "tab-links"onclick="opentab('Education')"> Education</p>
+                    <p class = "tab-links"onclick="opentab('Senior Courses')"> Senior Courses</p>
+                </div>
+                    <div class = "tab-contents active-tab" id = "Skills">
+                        <ul>
+                            <li><span> UI?UX</span><br> Designing Web/App Interfaces</li>
+                            <li><span> Course</span><br> Designing Web/App Interfaces</li>
+                            <li><span> Lots of food</span><br> Designing Web/App Interfaces</li>
+                        </ul>
+                    </div>
+                    <div class = "tab-contents" id = "Experience">
+                        <ul>
+                            <li><span> nVent</span><br> Designing Web/App Interfaces</li>
+                            <li><span> Machine Learning Research Assistant</span><br> Designing Web/App Interfaces</li>
+                            <li><span> Pro soccer player</span><br> Designing Web/App Interfaces</li>
+                        </ul>
+                    </div>
+                    <div class = "tab-contents" id = "Education">
+                        <ul>
+                            <li><span> University of Alberta</span><br> Designing Web/App Interfaces</li>
+                            <li><span> Aga Khan Academies Mombasa</span><br> Designing Web/App Interfaces</li>
+                            <li><span> Lots of food</span><br> Designing Web/App Interfaces</li>
+                        </ul>
+                    </div>
+                    <div class = "tab-contents" id = "Senior Courses">
+                        <ul>
+                            <li><span> UI?UX</span><br> Designing Web/App Interfaces</li>
+                            <li><span> Course</span><br> Designing Web/App Interfaces</li>
+                            <li><span> Lots of food</span><br> Designing Web/App Interfaces</li>
+                        </ul>
+                    </div>
+                
+
+
+        </div>    
+    </div>
+
+
+</div>
+        
+
+
+        <!-- Temporary place holder when testing out features (code is also not mine)-->
+
 
         <h1>
             Last Year Specialization:
