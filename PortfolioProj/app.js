@@ -14,7 +14,6 @@ function opentab(tabname){
     document.getElementById(tabname).classList.add("active-tab");
 }
 
-
 // Test Code for changing the light to dark theme 
 function switchTheme(){
     const theme = document.getElementById("theme").value;
