@@ -19,3 +19,14 @@ function switchTheme(){
     const theme = document.getElementById("theme").value;
     document.getElementsByIdTagName("meta")[0].content = theme; 
 }
+
+// Password protection temporary
+
+function ValidatePassword() {
+
+    var password = prompt("Please enter the correct combination of letters and numbers to proceed","");
+    if (password == "Cool") {
+        return true;
+    }
+    return false;
+}
