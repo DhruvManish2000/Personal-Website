@@ -6,8 +6,39 @@
     text-decoration: none;
 }
 
+/* Scrolling feature here */
+
+html{
+    height: 100%;
+}
 body{
     overflow-x:hidden;
+    margin:0;
+    padding: 0;
+    height: 100%;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #007ced;
+    position: absolute;
+    left: 0;
+    bottom: -6px; 
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+        width: 100%;
+}
+.section{
+    height: 100%;
+    padding-top: 20px;
+    background: #222;
 }
 .hero-header{
     width: 100%;
@@ -141,12 +172,75 @@ nav .navlinks li a{
 }
 .hero-text .social i{
     color: #e5e5e5;
-    font-size: 18px;
+    font-size: 22px;
     margin-right: 10px;
     transition: 0.5s;
 }
 .hero-text .social i:hover{
     color: #007ced;
     transform: rotate(360deg);
+}
+
+/* ------------------------ Portfolio/ Big Projects ---------------------------- */ 
+
+.project {
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 7px 11px;
+    text-align: left;
+    position: relative;
+    height: 200px;
+    background-color: #444;
+    justify-content: space-between;
+}
+
+.project h1{
+    color: grey;
+}
+
+.project p{
+    color: #e5e5e5;
+    position: relative;
+    top: 10px;
+}
+
+/* Contact Form at the end styling */
+
+form{
+
+    background: #fff; 
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+form h3{
+    color: #555;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-align: center;
+}
+form input, form textarea{
+    border: 0;
+    margin: 10px 0;
+    padding: 20px;
+    outline: none;
+    background: #f5f5f5;
+    font-size: 16px;
+}
+form button{
+    padding: 15px;
+    background: #007ced;
+    color: #fff;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    margin: 20px auto 0;
+    border-radius: 30px;
 }
 

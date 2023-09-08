@@ -11,8 +11,8 @@
     <!-- Font awesome cdn font icon css -->
     <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body>
 
+<body>    
     <div class = "hero-header">
         <div class = "wrapper">
             <header>
@@ -27,15 +27,16 @@
                         <span></span>
                     </div>
                     <ul class = "navlinks">
-                        <li><a href = "#">Home</a></li>
-                        <li><a href = "#">Portfolio</a></li>
-                        <li><a href = "#">Resume</a></li>
-                        <li><a href = "#">Blog</a></li>
+                        <li><a class = "nav" id = "1" href = "#">Home</a></li>
+                        <li><a class = "nav" id = "2" href = "#">Portfolio</a></li>
+                        <li><a href = "./Dhruv_Resume.pdf" target = "_blank">Resume</a></li>
+                        <li><a href = "#">Hobbies</a></li>
                         <li><a href = "#">Contact</a></li>
                     </ul>
                 </nav>
-
             </header>
+
+            <div class="section" id = "1">
             <div class="container">
                 <div class = "hero-pic">
                     <img src = "#" alt = "profile pic">
@@ -43,9 +44,9 @@
             <div class="hero-text">
                 <h5> Hi I'm <span class = "input"> Electrical Engineer</span></h5>
                 <h1> Dhruv Pranlal </h1>
-                <p> I am doing absolutely nothing with me life lol </p>
+                <p> I am doing absolutely nothing with me life lol, however I</p>
                 <div class="btn-group"> 
-                    <a href = "#" class = "btn active">Download Resume</a>
+                    <a href = "./Dhruv_Resume.pdf" download = "Dhruv_Resume" class = "btn active">Download Resume</a>
                     <a href = "#" class = "btn">Contact</a>
                 </div>
 
@@ -53,10 +54,15 @@
                     <a href = "#"><i class = "fa-brands fa-facebook"></i></a>
                     <a href = "#"><i class = "fa-brands fa-linkedin"></i></a>
                     <a href = "#"><i class = "fa-brands fa-instagram"></i></a>
+                    <a href = "https://github.com/DhruvManish2000" target = "_blank"><i class = "fa-brands fa-github"></i></a>
+                    
                 </div>
             </div>
-        </div>
+            </div>
+            </div>
     </div>
+</div>
+
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js"></script>
     <script>
         var togglebtn = document.querySelector(".togglebtn");
@@ -76,10 +82,88 @@
             backSpeed:55,
             loop:true
         })
+
+    $('.nav').click(function() {
+    var id = $(this).attr('id');
+    $('html, body').animate({
+        scrollTop: ($('#' + id + '.section').offset().top)
+    }, 1000);
+});
     </script>
 
+    <h2> Page 2 </h2>
+
+<div class="section" id = "2">
+    <div class="project">
+         
+        <h1> Capstone Project </h1>
+        <p> Did my capstone project in 2022-2023, built a quadcopter drone bbrrr 
+            <a href = "#"> Github Repository</a>
+            <br>
+            <a href = "#"> PCB Boards/ Working Demo</a>
+
+            <!-- Left off at, we need to make sure that the links are stacked on a new line  -->
+        </p>
+    </div>
+
+    <div class="project">
+         
+        <h1> LED Car Player </h1>
+        <p> Did my capstone project in 2022-2023, built a quadcopter drone bbrrr 
+            <a href = "#"> Github Repository</a>
+            <a href = "#"> PCB Boards/ Working Demo</a>
+
+            <!-- Left off at, we need to make sure that the links are stacked on a new line  -->
+        </p>
+    </div>
+
+    <div class="project">
+         
+        <h1> Capstone Project </h1>
+        <p> Did my capstone project in 2022-2023, built a quadcopter drone bbrrr 
+            <a href = "#"> Github Repository</a>
+            <a href = "#"> PCB Boards/ Working Demo</a>
+
+            <!-- Left off at, we need to make sure that the links are stacked on a new line  -->
+        </p>
+    </div>
+</div>
+
+<p> page 3</p>
+
+<div class="section" id = "2">
+
+    <div class="container">
+
+        <form onsubmit = "sendEmail(); reset(); return false;">
+            <h3> Contact Me </h3>
+            <input type = "text" id = "name" placeholder="Your Name" required>
+            <input type = "email" id = "email" placeholder="Email id" required>
+            <input type = "text" id = "phone" placeholder="Phone no." required>
+            <textarea id = "message" rows = "4" placeholder = "What did you want to tell me?"></textarea>
+            <button type = "submit"> Send </button>
+        </form>
+    </div>
+
+<script src = "https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+    function sendEmail(){
+    Email.send({
+        Host : "smtp.elasticmail.com",
+        Username : "pranlal@ualebrta.ca",
+        Password : "Robgyg-6paccu-qizmax",
+        To : 'pranlal@ualberta.ca',
+        From : document.getElementById("email").value,
+        Subject : "New Contact Form Enquiry",
+        Body : "And this is the body"
+}).then(
+  message => alert(message)
+); 
+    }
+</script>
+
+</div>
+
 </body>
-
-
-
 </html>
