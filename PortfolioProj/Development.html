@@ -139,7 +139,7 @@
             <h3> Contact Me </h3>
             <input type = "text" id = "name" placeholder="Your Name" required>
             <input type = "email" id = "email" placeholder="Email id" required>
-            <input type = "text" id = "phone" placeholder="Phone no." required>
+            <input type = "text" id = "phone" placeholder="Phone No." required>
             <textarea id = "message" rows = "4" placeholder = "What did you want to tell me?"></textarea>
             <button type = "submit"> Send </button>
         </form>
@@ -150,15 +150,16 @@
 <script>
     function sendEmail(){
     Email.send({
-        Host : "smtp.elasticmail.com",
-        Username : "pranlal@ualebrta.ca",
-        Password : "Robgyg-6paccu-qizmax",
+        SecureToken: "e4a40756-3be6-4d9e-a405-47bb5a419e28",
         To : 'pranlal@ualberta.ca',
         From : document.getElementById("email").value,
-        Subject : "New Contact Form Enquiry",
-        Body : "And this is the body"
+        Subject : "New Contact Form Inquiry",
+        Body : "Name: " + document.getElementById("name").value + 
+        "<br> Email: " + document.getElementById("email").value + 
+        "<br> Phone: " + document.getElementById("phone").value +
+        "<br> Message: " + document.getElementById("message").value
 }).then(
-  message => alert(message)
+  message => alert("Message Sent Succesfully :), the owner will get in touch with you soon :)")
 ); 
     }
 </script>
