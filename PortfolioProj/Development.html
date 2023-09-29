@@ -15,6 +15,7 @@
 <body>    
     <div class = "hero-header">
         <div class = "wrapper">
+            <div class="navbar">
             <header>
                 <div class = "logo">
                     <i class = "fa-solid fa-d"></i>
@@ -28,15 +29,16 @@
                     </div>
                     <ul class = "navlinks">
                         <li><a class = "nav" id = "1" href = "#">Home</a></li>
-                        <li><a class = "nav" id = "2" href = "#">Portfolio</a></li>
+                        <li><a class = "nav" id = "2" href = "#portfolio">Portfolio</a></li>
                         <li><a href = "./Dhruv_Resume.pdf" target = "_blank">Resume</a></li>
-                        <li><a href = "#">Hobbies</a></li>
-                        <li><a href = "#">Contact</a></li>
+                        <li><a class="nav" id="3" href="#hobbies">Hobbies</a></li>
+                        <li><a class="nav" id="4" href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </header>
+        </div>
 
-            <div class="section" id = "1">
+            <div class="section" id = "home">
             <div class="container">
                 <div class = "hero-pic">
                     <img src = "#" alt = "profile pic">
@@ -49,6 +51,23 @@
                     <a href = "./Dhruv_Resume.pdf" download = "Dhruv_Resume" class = "btn active">Download Resume</a>
                     <a href = "#" class = "btn">Contact</a>
                 </div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+
+var tabcontents = document.getElementsByClassName("tab-contents");
+
+function opentab(tabname){
+    for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+}
+</script>
 
                 <div class="social">
                     <a href = "#"><i class = "fa-brands fa-facebook"></i></a>
@@ -83,21 +102,47 @@
             loop:true
         })
 
-    $('.nav').click(function() {
-    var id = $(this).attr('id');
-    $('html, body').animate({
-        scrollTop: ($('#' + id + '.section').offset().top)
-    }, 1000);
+        $(document).ready(function() {
+    $('.nav').click(function(e) {
+        e.preventDefault();
+
+        var id = $(this).attr('id');
+        var scrollToId;
+
+        if (id === "2") {
+            // Portfolio section
+            scrollToId = "portfolio";
+        } else if (id === "3") {
+            // Hobbies section
+            scrollToId = "hobbies";
+        } else if (id === "4") {
+            // Contact section
+            scrollToId = "contact";
+        } else {
+            // Home section (default)
+            scrollToId = "home";
+        }
+
+        $('html, body').animate({
+            scrollTop: $('#' + scrollToId).offset().top - offset
+        }, 1000);
+    });
 });
+
     </script>
 
-    <h2> Page 2 </h2>
-
-<div class="section" id = "2">
+<div class="section" id = "portfolio">
+    <div class="projects_list">
     <div class="project">
          
         <h1> Capstone Project </h1>
-        <p> Did my capstone project in 2022-2023, built a quadcopter drone bbrrr 
+        <p> The project involved designing and building a custom drone 
+            with the XInC2 chip as its primary flight controller. 
+            The team focused on testing and optimizing the chip’s 
+            performance in generating the necessary PWM waves, managing PI loops for stable flight, 
+            and managing RF communication between the drone and a remote controller
+            <br>
+            <br>
             <a href = "#"> Github Repository</a>
             <br>
             <a href = "#"> PCB Boards/ Working Demo</a>
@@ -109,8 +154,11 @@
     <div class="project">
          
         <h1> LED Car Player </h1>
-        <p> Did my capstone project in 2022-2023, built a quadcopter drone bbrrr 
+        <p>  
+            <br>
+            <br>
             <a href = "#"> Github Repository</a>
+            <br>
             <a href = "#"> PCB Boards/ Working Demo</a>
 
             <!-- Left off at, we need to make sure that the links are stacked on a new line  -->
@@ -121,17 +169,111 @@
          
         <h1> Capstone Project </h1>
         <p> Did my capstone project in 2022-2023, built a quadcopter drone bbrrr 
+            <br>
+            <br>
             <a href = "#"> Github Repository</a>
+            <br>
             <a href = "#"> PCB Boards/ Working Demo</a>
 
             <!-- Left off at, we need to make sure that the links are stacked on a new line  -->
         </p>
     </div>
 </div>
+</div>
 
-<p> page 3</p>
+<div class="section" id = "hobbies">
+    <!-- <div id="about">
 
-<div class="section" id = "2">
+        <div class="container1">
+            <div class = "row">
+                <div class = "about-col-2">
+                    <h1 class = "sub-title"> More about Dhruv </h1>
+                    <p> 
+    
+                        My name is Dhruv Manish Pranlal, 4th year Electrical Engineering student at the University of Alberta. I am from Zanzibar, Tanzania (Map to see where I am from).
+                        I am a firm beleiver in hardwork, and that has gotten me to where I am today. 
+            
+                    </p>
+    
+                    <div class = "tab-titles">
+                        <p class = "tab-links active-link" onclick="opentab('Skills')"> Skills</p>
+                        <p class = "tab-links"onclick="opentab('Experience')"> Experience</p>
+                        <p class = "tab-links"onclick="opentab('Education')"> Education</p>
+                        <p class = "tab-links"onclick="opentab('Senior Courses')"> Senior Courses</p>
+                    </div>
+                        <div class = "tab-contents active-tab" id = "Skills">
+                            <ul>
+                                <li><span> UI?UX</span><br> Designing Web/App Interfaces</li>
+                                <li><span> Course</span><br> Designing Web/App Interfaces</li>
+                                <li><span> Lots of food</span><br> Designing Web/App Interfaces</li>
+                            </ul>
+                        </div>
+                        <div class = "tab-contents" id = "Experience">
+                            <ul>
+                                <li><span> Firmware Developer Intern at Nvent</span><br> Designing Web/App Interfaces</li>
+                                <li><span> Machine Learning Research Assistant</span><br> Designing Web/App Interfaces</li>
+                                <li><span> ATB Data Analyst</span><br> Designing Web/App Interfaces</li>
+                            </ul>
+                        </div>
+                        <div class = "tab-contents" id = "Education">
+                            <ul>
+                                <li><span> University of Alberta (2024)</span><br> BsC Electrical Engineering</li>
+                                <li><span> Aga Khan Academies Mombasa</span><br> Graduated in May 2019</li>
+                            </ul>
+                        </div>
+                        <div class = "tab-contents" id = "Senior Courses">
+                            <ul>
+                                <li><span> ECE 464 </span><br> Medical Robotics</li>
+                                <li><span> ECE 447 </span><br> Data Analysis and Machine Learning</li>
+                                <li><span> ECE 315 </span><br> Computer Interfacing</li>
+                                <li><span> ECE 410 </span><br> Advanced Digital Logic Design</li>
+                                <li><span> ECE 403 </span><br> Integrated Circuit Design</li>
+                                <li><span> ECE 304 </span><br> Digital Electronics</li>
+                            </ul>
+                        </div>
+                
+            </div>    
+        </div>
+    </div>
+</div> -->
+
+<div id = "portfolio">
+    <div class = "container2"> 
+        <h1 class = "sub-title1"> Hobbies </h1>
+        <div class = "work-list">
+            <div class = "work">
+                <img src ="./Images/PCB.jpeg">
+                <div class = "layer">
+                    <h3> QuadCopter Drone </h3>
+                    <p> The drone flies lol </p>
+                    <a href = '#'><i class = "fas fa-external-link-alt"> </i> </a>
+                </div>
+            </div>
+            <div class = "work">
+                <img src =#>
+                <div class = "layer">
+                    <h3> Personal App </h3>
+                    <p> Maintenance app </p>
+                    <a href = '#'><i class = "fas fa-external-link-alt"> </i> </a>
+                </div>
+            </div>
+            <div class = "work">
+                <img src =#>
+                <div class = "layer">
+                    <h3> QuadCopter Drone </h3>
+                    <p> The drone flies lol </p>
+                    <a href = '#'><i class = "fas fa-external-link-alt"> </i> </a>
+                </div>
+            </div>
+            
+
+        </div>
+        <a href="#" class = 'btn'> See more</a>
+    </div>
+</div>
+</div>
+
+<div class="section" id = "contact">
 
     <div class="container">
 
